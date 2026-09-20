@@ -1,0 +1,16 @@
+{
+  "name": "nivesha-payments-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny serverless backend for Nivesha's Razorpay subscription payments — creates orders and verifies payment signatures so the Razorpay secret key never ships inside the mobile app.",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
+    "razorpay": "^2.9.4"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.0.0"
+  }
+}

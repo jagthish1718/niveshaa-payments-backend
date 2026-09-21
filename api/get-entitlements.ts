@@ -21,7 +21,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const admin = getSupabaseAdmin();
     const { data } = await admin
       .from('entitlements')
-      .select('plan_id, last_payment_id, current_period_end')
+      .select('plan_id, last_payment_id, current_period_end, purchased_books')
       .eq('user_id', userId)
       .maybeSingle();
 
@@ -32,6 +32,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       planId: isSubscribed ? data?.plan_id ?? null : null,
       lastPaymentId: data?.last_payment_id ?? null,
       currentPeriodEnd: data?.current_period_end ?? null,
+      purchasedBooks: data?.purchased_books ?? [],
     });
   } catch (err) {
     console.error('get-entitlements failed', err);

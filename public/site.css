@@ -26,10 +26,19 @@ a { color: inherit; text-decoration: none; }
   padding: 20px 24px;
 }
 .nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 800;
   font-size: 18px;
   color: var(--primary);
   letter-spacing: 0.2px;
+}
+.brand-mascot {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  object-position: top;
 }
 .nav .links a {
   margin-left: 22px;
@@ -113,61 +122,27 @@ a { color: inherit; text-decoration: none; }
   flex: 0 0 auto;
   display: flex;
   justify-content: center;
-}
-.phone-mock {
-  width: 250px;
-  background: #0f1420;
-  border-radius: 34px;
-  padding: 14px 12px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.35), 0 0 0 6px rgba(255,255,255,0.06);
-  transform: rotate(3deg);
-}
-.phone-notch {
-  width: 60px;
-  height: 6px;
-  background: rgba(255,255,255,0.25);
-  border-radius: 4px;
-  margin: 0 auto 10px;
-}
-.phone-screen {
-  background: #fff;
-  border-radius: 20px;
-  padding: 16px 16px 10px;
-  color: var(--text);
-}
-.screen-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--muted);
-  letter-spacing: 0.4px;
-}
-.screen-price {
-  font-size: 20px;
-  font-weight: 800;
-  margin: 4px 0 8px;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-.screen-price .up {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #17a35a;
-}
-.chart-svg { width: 100%; height: 64px; display: block; }
-.candles {
-  display: flex;
   align-items: flex-end;
-  gap: 5px;
-  height: 44px;
-  margin-top: 8px;
+  width: 300px;
 }
-.candle {
-  flex: 1;
-  border-radius: 2px;
+.mascot-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
 }
-.candle.up { background: #17a35a; }
-.candle.dn { background: #e5493f; opacity: 0.85; }
+.mascot-img {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.28));
+}
 
 .stat-chip {
   position: absolute;
@@ -180,8 +155,9 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 12px 30px rgba(0,0,0,0.18);
   white-space: nowrap;
 }
-.chip-a { top: 10px; left: -10px; }
-.chip-b { bottom: 26px; right: -18px; }
+.chip-a { top: 6%; left: -6%; }
+.chip-b { top: 38%; right: -12%; }
+.chip-c { bottom: 8%; left: -10%; }
 .badge-btn {
   display: inline-flex;
   align-items: center;
@@ -319,5 +295,6 @@ footer .copyright {
   .features { grid-template-columns: 1fr; }
   .hero h1 { font-size: 30px; }
   .nav .links a { margin-left: 14px; font-size: 13px; }
-  .phone-mock { width: 210px; }
+  .hero-visual { width: 220px; }
+  .stat-chip { font-size: 10.5px; padding: 7px 11px; }
 }
